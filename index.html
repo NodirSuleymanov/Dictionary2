@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nemis–O'zbek Lug'at</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">🇩🇪 ↔ 🇺🇿</div>
+    <h1>Nemis – O'zbek Lug'at</h1>
+    <p>So'zlar, iboralar va idiomalar</p>
+  </div>
+
+  <!-- Til yo'nalishi -->
+  <div class="direction-bar">
+    <button class="dir-btn active" id="btnDeUz" onclick="setDirection('de-uz')">
+      🇩🇪 Nemischa → O'zbekcha
+    </button>
+    <button class="dir-btn" id="btnUzDe" onclick="setDirection('uz-de')">
+      🇺🇿 O'zbekcha → Nemischa
+    </button>
+  </div>
+
+  <!-- Qidiruv -->
+  <div class="search-wrap">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="So'z kiriting..."
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✕</button>
+    </div>
+    <div class="search-info" id="searchInfo"></div>
+  </div>
+
+  <!-- Kategoriya filtri -->
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" onclick="setFilter('all', this)">Barchasi</button>
+    <button class="filter-btn" onclick="setFilter('noun', this)">Ot</button>
+    <button class="filter-btn" onclick="setFilter('verb', this)">Fe'l</button>
+    <button class="filter-btn" onclick="setFilter('adjective', this)">Sifat</button>
+    <button class="filter-btn" onclick="setFilter('phrase', this)">Ibora</button>
+    <button class="filter-btn" onclick="setFilter('idiom', this)">Idioma</button>
+    <button class="filter-btn" onclick="setFilter('adverb', this)">Ravish</button>
+    <button class="filter-btn" onclick="setFilter('number', this)">Son</button>
+  </div>
+
+  <!-- Natijalar -->
+  <div id="resultsWrap">
+    <div id="resultsList"></div>
+    <div id="apiResult" class="api-result" style="display:none"></div>
+    <div id="noResult" class="no-result" style="display:none">
+      <div class="no-result-icon">🔎</div>
+      <p>So'z topilmadi</p>
+      <p class="no-result-sub">Internet mavjud bo'lsa, onlayn tarjima yuklanadi...</p>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <span>📚 <b>556</b> ta so'z</span>
+    <span>💬 <b>37</b> ta ibora</span>
+    <span>🎭 <b>30</b> ta idioma</span>
+    <span>🌐 Onlayn tarjima: <b id="apiStatus">tekshirilmoqda...</b></span>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
