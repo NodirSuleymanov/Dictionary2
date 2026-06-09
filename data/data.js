@@ -1,0 +1,2810 @@
+// Nemis-O'zbek Lug'at bazasi - 556 ta so'z
+const WORDS_DATA = [
+  {
+    "de": "der Apfel",
+    "uz": "olma",
+    "type": "noun",
+    "plural": "die Äpfel"
+  },
+  {
+    "de": "das Brot",
+    "uz": "non",
+    "type": "noun",
+    "plural": "die Brote"
+  },
+  {
+    "de": "die Milch",
+    "uz": "sut",
+    "type": "noun"
+  },
+  {
+    "de": "das Wasser",
+    "uz": "suv",
+    "type": "noun"
+  },
+  {
+    "de": "der Tee",
+    "uz": "choy",
+    "type": "noun"
+  },
+  {
+    "de": "der Kaffee",
+    "uz": "qahva",
+    "type": "noun"
+  },
+  {
+    "de": "das Fleisch",
+    "uz": "go'sht",
+    "type": "noun"
+  },
+  {
+    "de": "der Fisch",
+    "uz": "baliq",
+    "type": "noun"
+  },
+  {
+    "de": "das Ei",
+    "uz": "tuxum",
+    "type": "noun",
+    "plural": "die Eier"
+  },
+  {
+    "de": "der Käse",
+    "uz": "pishloq",
+    "type": "noun"
+  },
+  {
+    "de": "die Butter",
+    "uz": "sariyog'",
+    "type": "noun"
+  },
+  {
+    "de": "der Zucker",
+    "uz": "shakar",
+    "type": "noun"
+  },
+  {
+    "de": "das Salz",
+    "uz": "tuz",
+    "type": "noun"
+  },
+  {
+    "de": "der Reis",
+    "uz": "guruch",
+    "type": "noun"
+  },
+  {
+    "de": "die Nudeln",
+    "uz": "makaron",
+    "type": "noun"
+  },
+  {
+    "de": "die Tomate",
+    "uz": "pomidor",
+    "type": "noun",
+    "plural": "die Tomaten"
+  },
+  {
+    "de": "die Kartoffel",
+    "uz": "kartoshka",
+    "type": "noun",
+    "plural": "die Kartoffeln"
+  },
+  {
+    "de": "die Zwiebel",
+    "uz": "piyoz",
+    "type": "noun",
+    "plural": "die Zwiebeln"
+  },
+  {
+    "de": "der Knoblauch",
+    "uz": "sarimsoq",
+    "type": "noun"
+  },
+  {
+    "de": "die Karotte",
+    "uz": "sabzi",
+    "type": "noun",
+    "plural": "die Karotten"
+  },
+  {
+    "de": "die Gurke",
+    "uz": "bodring",
+    "type": "noun",
+    "plural": "die Gurken"
+  },
+  {
+    "de": "der Salat",
+    "uz": "salat",
+    "type": "noun"
+  },
+  {
+    "de": "die Orange",
+    "uz": "apelsin",
+    "type": "noun",
+    "plural": "die Orangen"
+  },
+  {
+    "de": "die Banane",
+    "uz": "banan",
+    "type": "noun",
+    "plural": "die Bananen"
+  },
+  {
+    "de": "die Traube",
+    "uz": "uzum",
+    "type": "noun",
+    "plural": "die Trauben"
+  },
+  {
+    "de": "die Wassermelone",
+    "uz": "tarvuz",
+    "type": "noun"
+  },
+  {
+    "de": "die Melone",
+    "uz": "qovun",
+    "type": "noun"
+  },
+  {
+    "de": "die Erdbeere",
+    "uz": "qulupnay",
+    "type": "noun"
+  },
+  {
+    "de": "der Pfirsich",
+    "uz": "shaftoli",
+    "type": "noun"
+  },
+  {
+    "de": "die Birne",
+    "uz": "nok",
+    "type": "noun"
+  },
+  {
+    "de": "der Vater",
+    "uz": "ota",
+    "type": "noun"
+  },
+  {
+    "de": "die Mutter",
+    "uz": "ona",
+    "type": "noun"
+  },
+  {
+    "de": "der Bruder",
+    "uz": "aka / uka",
+    "type": "noun"
+  },
+  {
+    "de": "die Schwester",
+    "uz": "opa / singil",
+    "type": "noun"
+  },
+  {
+    "de": "der Sohn",
+    "uz": "o'g'il",
+    "type": "noun"
+  },
+  {
+    "de": "die Tochter",
+    "uz": "qiz",
+    "type": "noun"
+  },
+  {
+    "de": "der Großvater",
+    "uz": "bobo",
+    "type": "noun"
+  },
+  {
+    "de": "die Großmutter",
+    "uz": "buvi",
+    "type": "noun"
+  },
+  {
+    "de": "der Onkel",
+    "uz": "amaki / tog'a",
+    "type": "noun"
+  },
+  {
+    "de": "die Tante",
+    "uz": "xola / amma",
+    "type": "noun"
+  },
+  {
+    "de": "der Mann",
+    "uz": "er / odam",
+    "type": "noun"
+  },
+  {
+    "de": "die Frau",
+    "uz": "xotin / ayol",
+    "type": "noun"
+  },
+  {
+    "de": "das Kind",
+    "uz": "bola",
+    "type": "noun",
+    "plural": "die Kinder"
+  },
+  {
+    "de": "der Freund",
+    "uz": "do'st",
+    "type": "noun"
+  },
+  {
+    "de": "die Freundin",
+    "uz": "qiz do'st",
+    "type": "noun"
+  },
+  {
+    "de": "der Nachbar",
+    "uz": "qo'shni",
+    "type": "noun"
+  },
+  {
+    "de": "der Kollege",
+    "uz": "hamkasb",
+    "type": "noun"
+  },
+  {
+    "de": "der Chef",
+    "uz": "boshliq",
+    "type": "noun"
+  },
+  {
+    "de": "der Kopf",
+    "uz": "bosh",
+    "type": "noun"
+  },
+  {
+    "de": "das Gesicht",
+    "uz": "yuz",
+    "type": "noun"
+  },
+  {
+    "de": "das Auge",
+    "uz": "ko'z",
+    "type": "noun",
+    "plural": "die Augen"
+  },
+  {
+    "de": "die Nase",
+    "uz": "burun",
+    "type": "noun"
+  },
+  {
+    "de": "der Mund",
+    "uz": "og'iz",
+    "type": "noun"
+  },
+  {
+    "de": "das Ohr",
+    "uz": "quloq",
+    "type": "noun",
+    "plural": "die Ohren"
+  },
+  {
+    "de": "der Hals",
+    "uz": "bo'yin",
+    "type": "noun"
+  },
+  {
+    "de": "die Schulter",
+    "uz": "yelka",
+    "type": "noun"
+  },
+  {
+    "de": "der Arm",
+    "uz": "qo'l (tirsak bilan)",
+    "type": "noun"
+  },
+  {
+    "de": "die Hand",
+    "uz": "qo'l",
+    "type": "noun"
+  },
+  {
+    "de": "der Finger",
+    "uz": "barmoq",
+    "type": "noun"
+  },
+  {
+    "de": "das Bein",
+    "uz": "oyoq",
+    "type": "noun"
+  },
+  {
+    "de": "der Fuß",
+    "uz": "oyoq (panja)",
+    "type": "noun"
+  },
+  {
+    "de": "das Herz",
+    "uz": "yurak",
+    "type": "noun"
+  },
+  {
+    "de": "der Rücken",
+    "uz": "orqa",
+    "type": "noun"
+  },
+  {
+    "de": "der Bauch",
+    "uz": "qorin",
+    "type": "noun"
+  },
+  {
+    "de": "die Brust",
+    "uz": "ko'krak",
+    "type": "noun"
+  },
+  {
+    "de": "das Knie",
+    "uz": "tizza",
+    "type": "noun"
+  },
+  {
+    "de": "das Haar",
+    "uz": "soch",
+    "type": "noun"
+  },
+  {
+    "de": "der Zahn",
+    "uz": "tish",
+    "type": "noun",
+    "plural": "die Zähne"
+  },
+  {
+    "de": "das Haus",
+    "uz": "uy",
+    "type": "noun"
+  },
+  {
+    "de": "die Wohnung",
+    "uz": "kvartira / uy",
+    "type": "noun"
+  },
+  {
+    "de": "das Zimmer",
+    "uz": "xona",
+    "type": "noun"
+  },
+  {
+    "de": "die Küche",
+    "uz": "oshxona",
+    "type": "noun"
+  },
+  {
+    "de": "das Badezimmer",
+    "uz": "hammom",
+    "type": "noun"
+  },
+  {
+    "de": "das Schlafzimmer",
+    "uz": "yotoqxona",
+    "type": "noun"
+  },
+  {
+    "de": "das Wohnzimmer",
+    "uz": "mehmonxona",
+    "type": "noun"
+  },
+  {
+    "de": "die Tür",
+    "uz": "eshik",
+    "type": "noun"
+  },
+  {
+    "de": "das Fenster",
+    "uz": "deraza",
+    "type": "noun"
+  },
+  {
+    "de": "die Treppe",
+    "uz": "zinапоя",
+    "type": "noun"
+  },
+  {
+    "de": "der Boden",
+    "uz": "pol / er",
+    "type": "noun"
+  },
+  {
+    "de": "die Decke",
+    "uz": "shiftа",
+    "type": "noun"
+  },
+  {
+    "de": "die Wand",
+    "uz": "devor",
+    "type": "noun"
+  },
+  {
+    "de": "der Tisch",
+    "uz": "stol",
+    "type": "noun"
+  },
+  {
+    "de": "der Stuhl",
+    "uz": "stul",
+    "type": "noun"
+  },
+  {
+    "de": "das Bett",
+    "uz": "karavot",
+    "type": "noun"
+  },
+  {
+    "de": "der Schrank",
+    "uz": "shkaf",
+    "type": "noun"
+  },
+  {
+    "de": "das Sofa",
+    "uz": "divan",
+    "type": "noun"
+  },
+  {
+    "de": "die Lampe",
+    "uz": "chiroq",
+    "type": "noun"
+  },
+  {
+    "de": "der Kühlschrank",
+    "uz": "muzlatgich",
+    "type": "noun"
+  },
+  {
+    "de": "der Herd",
+    "uz": "plita",
+    "type": "noun"
+  },
+  {
+    "de": "die Waschmaschine",
+    "uz": "kir yuvish mashinasi",
+    "type": "noun"
+  },
+  {
+    "de": "der Fernseher",
+    "uz": "televizor",
+    "type": "noun"
+  },
+  {
+    "de": "das Telefon",
+    "uz": "telefon",
+    "type": "noun"
+  },
+  {
+    "de": "der Computer",
+    "uz": "kompyuter",
+    "type": "noun"
+  },
+  {
+    "de": "sein",
+    "uz": "bo'lmoq",
+    "type": "verb",
+    "conjugation": {
+      "ich": "bin",
+      "du": "bist",
+      "er": "ist",
+      "wir": "sind"
+    }
+  },
+  {
+    "de": "haben",
+    "uz": "ega bo'lmoq",
+    "type": "verb",
+    "conjugation": {
+      "ich": "habe",
+      "du": "hast",
+      "er": "hat",
+      "wir": "haben"
+    }
+  },
+  {
+    "de": "gehen",
+    "uz": "bormoq / ketmoq",
+    "type": "verb"
+  },
+  {
+    "de": "kommen",
+    "uz": "kelmoq",
+    "type": "verb"
+  },
+  {
+    "de": "machen",
+    "uz": "qilmoq",
+    "type": "verb"
+  },
+  {
+    "de": "sagen",
+    "uz": "aytmoq",
+    "type": "verb"
+  },
+  {
+    "de": "sehen",
+    "uz": "ko'rmoq",
+    "type": "verb"
+  },
+  {
+    "de": "hören",
+    "uz": "eshitmoq",
+    "type": "verb"
+  },
+  {
+    "de": "sprechen",
+    "uz": "gapirmoq",
+    "type": "verb"
+  },
+  {
+    "de": "lesen",
+    "uz": "o'qimoq",
+    "type": "verb"
+  },
+  {
+    "de": "schreiben",
+    "uz": "yozmoq",
+    "type": "verb"
+  },
+  {
+    "de": "essen",
+    "uz": "yemoq",
+    "type": "verb"
+  },
+  {
+    "de": "trinken",
+    "uz": "ichmoq",
+    "type": "verb"
+  },
+  {
+    "de": "schlafen",
+    "uz": "uxlamoq",
+    "type": "verb"
+  },
+  {
+    "de": "arbeiten",
+    "uz": "ishlаmoq",
+    "type": "verb"
+  },
+  {
+    "de": "lernen",
+    "uz": "o'rganmoq",
+    "type": "verb"
+  },
+  {
+    "de": "kaufen",
+    "uz": "sotib olmoq",
+    "type": "verb"
+  },
+  {
+    "de": "verkaufen",
+    "uz": "sotmoq",
+    "type": "verb"
+  },
+  {
+    "de": "fahren",
+    "uz": "haydamoq / bormoq",
+    "type": "verb"
+  },
+  {
+    "de": "laufen",
+    "uz": "yugurmoq / yurmoq",
+    "type": "verb"
+  },
+  {
+    "de": "wohnen",
+    "uz": "yashamoq",
+    "type": "verb"
+  },
+  {
+    "de": "lieben",
+    "uz": "sevmoq",
+    "type": "verb"
+  },
+  {
+    "de": "helfen",
+    "uz": "yordam bermoq",
+    "type": "verb"
+  },
+  {
+    "de": "fragen",
+    "uz": "so'ramoq",
+    "type": "verb"
+  },
+  {
+    "de": "antworten",
+    "uz": "javob bermoq",
+    "type": "verb"
+  },
+  {
+    "de": "denken",
+    "uz": "o'ylamoq",
+    "type": "verb"
+  },
+  {
+    "de": "wissen",
+    "uz": "bilmoq",
+    "type": "verb"
+  },
+  {
+    "de": "verstehen",
+    "uz": "tushunmoq",
+    "type": "verb"
+  },
+  {
+    "de": "vergessen",
+    "uz": "unutmoq",
+    "type": "verb"
+  },
+  {
+    "de": "beginnen",
+    "uz": "boshlаmoq",
+    "type": "verb"
+  },
+  {
+    "de": "beenden",
+    "uz": "tugatmoq",
+    "type": "verb"
+  },
+  {
+    "de": "öffnen",
+    "uz": "ochmoq",
+    "type": "verb"
+  },
+  {
+    "de": "schließen",
+    "uz": "yopmoq",
+    "type": "verb"
+  },
+  {
+    "de": "geben",
+    "uz": "bermoq",
+    "type": "verb"
+  },
+  {
+    "de": "nehmen",
+    "uz": "olmoq",
+    "type": "verb"
+  },
+  {
+    "de": "bringen",
+    "uz": "olib kelmoq",
+    "type": "verb"
+  },
+  {
+    "de": "stehen",
+    "uz": "turmoq",
+    "type": "verb"
+  },
+  {
+    "de": "sitzen",
+    "uz": "o'tirmoq",
+    "type": "verb"
+  },
+  {
+    "de": "liegen",
+    "uz": "yotmoq",
+    "type": "verb"
+  },
+  {
+    "de": "spielen",
+    "uz": "o'ynamoq",
+    "type": "verb"
+  },
+  {
+    "de": "tanzen",
+    "uz": "raqsga tushmoq",
+    "type": "verb"
+  },
+  {
+    "de": "singen",
+    "uz": "qo'shiq aytmoq",
+    "type": "verb"
+  },
+  {
+    "de": "kochen",
+    "uz": "pishirmoq",
+    "type": "verb"
+  },
+  {
+    "de": "waschen",
+    "uz": "yuvmoq",
+    "type": "verb"
+  },
+  {
+    "de": "putzen",
+    "uz": "tozalamoq",
+    "type": "verb"
+  },
+  {
+    "de": "reisen",
+    "uz": "sayohat qilmoq",
+    "type": "verb"
+  },
+  {
+    "de": "fliegen",
+    "uz": "uchmoq",
+    "type": "verb"
+  },
+  {
+    "de": "schwimmen",
+    "uz": "suzmoq",
+    "type": "verb"
+  },
+  {
+    "de": "rennen",
+    "uz": "chopmoq",
+    "type": "verb"
+  },
+  {
+    "de": "warten",
+    "uz": "kutmoq",
+    "type": "verb"
+  },
+  {
+    "de": "suchen",
+    "uz": "qidirmoq",
+    "type": "verb"
+  },
+  {
+    "de": "finden",
+    "uz": "topmoq",
+    "type": "verb"
+  },
+  {
+    "de": "verlieren",
+    "uz": "yo'qotmoq",
+    "type": "verb"
+  },
+  {
+    "de": "bezahlen",
+    "uz": "to'lamoq",
+    "type": "verb"
+  },
+  {
+    "de": "anrufen",
+    "uz": "qo'ng'iroq qilmoq",
+    "type": "verb"
+  },
+  {
+    "de": "schicken",
+    "uz": "yubormoq",
+    "type": "verb"
+  },
+  {
+    "de": "empfangen",
+    "uz": "qabul qilmoq",
+    "type": "verb"
+  },
+  {
+    "de": "besuchen",
+    "uz": "tashrif buyurmoq",
+    "type": "verb"
+  },
+  {
+    "de": "einladen",
+    "uz": "taklif qilmoq",
+    "type": "verb"
+  },
+  {
+    "de": "heiraten",
+    "uz": "uylanmoq / turmushga chiqmoq",
+    "type": "verb"
+  },
+  {
+    "de": "geboren werden",
+    "uz": "tug'ilmoq",
+    "type": "verb"
+  },
+  {
+    "de": "sterben",
+    "uz": "o'lmoq",
+    "type": "verb"
+  },
+  {
+    "de": "gut",
+    "uz": "yaxshi",
+    "type": "adjective"
+  },
+  {
+    "de": "schlecht",
+    "uz": "yomon",
+    "type": "adjective"
+  },
+  {
+    "de": "groß",
+    "uz": "katta / baland",
+    "type": "adjective"
+  },
+  {
+    "de": "klein",
+    "uz": "kichik / past",
+    "type": "adjective"
+  },
+  {
+    "de": "neu",
+    "uz": "yangi",
+    "type": "adjective"
+  },
+  {
+    "de": "alt",
+    "uz": "eski / qari",
+    "type": "adjective"
+  },
+  {
+    "de": "jung",
+    "uz": "yosh",
+    "type": "adjective"
+  },
+  {
+    "de": "schön",
+    "uz": "chiroyli / go'zal",
+    "type": "adjective"
+  },
+  {
+    "de": "hässlich",
+    "uz": "xunuk",
+    "type": "adjective"
+  },
+  {
+    "de": "schnell",
+    "uz": "tez",
+    "type": "adjective"
+  },
+  {
+    "de": "langsam",
+    "uz": "sekin",
+    "type": "adjective"
+  },
+  {
+    "de": "stark",
+    "uz": "kuchli",
+    "type": "adjective"
+  },
+  {
+    "de": "schwach",
+    "uz": "kuchsiz",
+    "type": "adjective"
+  },
+  {
+    "de": "warm",
+    "uz": "iliq / issiq",
+    "type": "adjective"
+  },
+  {
+    "de": "kalt",
+    "uz": "sovuq",
+    "type": "adjective"
+  },
+  {
+    "de": "heiß",
+    "uz": "issiq",
+    "type": "adjective"
+  },
+  {
+    "de": "kühl",
+    "uz": "salqin",
+    "type": "adjective"
+  },
+  {
+    "de": "laut",
+    "uz": "baland ovozli",
+    "type": "adjective"
+  },
+  {
+    "de": "leise",
+    "uz": "past ovozli / jim",
+    "type": "adjective"
+  },
+  {
+    "de": "hell",
+    "uz": "yorug'",
+    "type": "adjective"
+  },
+  {
+    "de": "dunkel",
+    "uz": "qorong'u",
+    "type": "adjective"
+  },
+  {
+    "de": "sauber",
+    "uz": "toza",
+    "type": "adjective"
+  },
+  {
+    "de": "schmutzig",
+    "uz": "iflos",
+    "type": "adjective"
+  },
+  {
+    "de": "billig",
+    "uz": "arzon",
+    "type": "adjective"
+  },
+  {
+    "de": "teuer",
+    "uz": "qimmat",
+    "type": "adjective"
+  },
+  {
+    "de": "leicht",
+    "uz": "yengil / oson",
+    "type": "adjective"
+  },
+  {
+    "de": "schwer",
+    "uz": "og'ir / qiyin",
+    "type": "adjective"
+  },
+  {
+    "de": "lang",
+    "uz": "uzun",
+    "type": "adjective"
+  },
+  {
+    "de": "kurz",
+    "uz": "qisqa",
+    "type": "adjective"
+  },
+  {
+    "de": "breit",
+    "uz": "keng",
+    "type": "adjective"
+  },
+  {
+    "de": "eng",
+    "uz": "tor",
+    "type": "adjective"
+  },
+  {
+    "de": "voll",
+    "uz": "to'liq / to'la",
+    "type": "adjective"
+  },
+  {
+    "de": "leer",
+    "uz": "bo'sh",
+    "type": "adjective"
+  },
+  {
+    "de": "richtig",
+    "uz": "to'g'ri",
+    "type": "adjective"
+  },
+  {
+    "de": "falsch",
+    "uz": "noto'g'ri / yolg'on",
+    "type": "adjective"
+  },
+  {
+    "de": "müde",
+    "uz": "charchagan",
+    "type": "adjective"
+  },
+  {
+    "de": "glücklich",
+    "uz": "baxtli / xursand",
+    "type": "adjective"
+  },
+  {
+    "de": "traurig",
+    "uz": "g'amgin / xafa",
+    "type": "adjective"
+  },
+  {
+    "de": "krank",
+    "uz": "kasal",
+    "type": "adjective"
+  },
+  {
+    "de": "gesund",
+    "uz": "sog'lom",
+    "type": "adjective"
+  },
+  {
+    "de": "hungrig",
+    "uz": "och",
+    "type": "adjective"
+  },
+  {
+    "de": "satt",
+    "uz": "to'q",
+    "type": "adjective"
+  },
+  {
+    "de": "durstig",
+    "uz": "chanqagan",
+    "type": "adjective"
+  },
+  {
+    "de": "wütend",
+    "uz": "g'azablangan",
+    "type": "adjective"
+  },
+  {
+    "de": "ängstlich",
+    "uz": "qo'rqqan / qo'rqoq",
+    "type": "adjective"
+  },
+  {
+    "de": "ruhig",
+    "uz": "tinch / xotirjam",
+    "type": "adjective"
+  },
+  {
+    "de": "interessant",
+    "uz": "qiziqarli",
+    "type": "adjective"
+  },
+  {
+    "de": "langweilig",
+    "uz": "zerikarli",
+    "type": "adjective"
+  },
+  {
+    "de": "wichtig",
+    "uz": "muhim",
+    "type": "adjective"
+  },
+  {
+    "de": "möglich",
+    "uz": "mumkin",
+    "type": "adjective"
+  },
+  {
+    "de": "unmöglich",
+    "uz": "imkonsiz",
+    "type": "adjective"
+  },
+  {
+    "de": "einfach",
+    "uz": "oddiy / oson",
+    "type": "adjective"
+  },
+  {
+    "de": "kompliziert",
+    "uz": "murakkab",
+    "type": "adjective"
+  },
+  {
+    "de": "klug",
+    "uz": "aqlli / ziyrak",
+    "type": "adjective"
+  },
+  {
+    "de": "dumm",
+    "uz": "ahmoq / nodon",
+    "type": "adjective"
+  },
+  {
+    "de": "lustig",
+    "uz": "kulgili / hazilkash",
+    "type": "adjective"
+  },
+  {
+    "de": "ernst",
+    "uz": "jiddiy",
+    "type": "adjective"
+  },
+  {
+    "de": "offen",
+    "uz": "ochiq",
+    "type": "adjective"
+  },
+  {
+    "de": "geschlossen",
+    "uz": "yopiq",
+    "type": "adjective"
+  },
+  {
+    "de": "früh",
+    "uz": "erta",
+    "type": "adjective"
+  },
+  {
+    "de": "spät",
+    "uz": "kech",
+    "type": "adjective"
+  },
+  {
+    "de": "eins",
+    "uz": "bir",
+    "type": "number"
+  },
+  {
+    "de": "zwei",
+    "uz": "ikki",
+    "type": "number"
+  },
+  {
+    "de": "drei",
+    "uz": "uch",
+    "type": "number"
+  },
+  {
+    "de": "vier",
+    "uz": "to'rt",
+    "type": "number"
+  },
+  {
+    "de": "fünf",
+    "uz": "besh",
+    "type": "number"
+  },
+  {
+    "de": "sechs",
+    "uz": "olti",
+    "type": "number"
+  },
+  {
+    "de": "sieben",
+    "uz": "yetti",
+    "type": "number"
+  },
+  {
+    "de": "acht",
+    "uz": "sakkiz",
+    "type": "number"
+  },
+  {
+    "de": "neun",
+    "uz": "to'qqiz",
+    "type": "number"
+  },
+  {
+    "de": "zehn",
+    "uz": "o'n",
+    "type": "number"
+  },
+  {
+    "de": "zwanzig",
+    "uz": "yigirma",
+    "type": "number"
+  },
+  {
+    "de": "dreißig",
+    "uz": "o'ttiz",
+    "type": "number"
+  },
+  {
+    "de": "hundert",
+    "uz": "yuz",
+    "type": "number"
+  },
+  {
+    "de": "tausend",
+    "uz": "ming",
+    "type": "number"
+  },
+  {
+    "de": "Montag",
+    "uz": "Dushanba",
+    "type": "noun"
+  },
+  {
+    "de": "Dienstag",
+    "uz": "Seshanba",
+    "type": "noun"
+  },
+  {
+    "de": "Mittwoch",
+    "uz": "Chorshanba",
+    "type": "noun"
+  },
+  {
+    "de": "Donnerstag",
+    "uz": "Payshanba",
+    "type": "noun"
+  },
+  {
+    "de": "Freitag",
+    "uz": "Juma",
+    "type": "noun"
+  },
+  {
+    "de": "Samstag",
+    "uz": "Shanba",
+    "type": "noun"
+  },
+  {
+    "de": "Sonntag",
+    "uz": "Yakshanba",
+    "type": "noun"
+  },
+  {
+    "de": "Januar",
+    "uz": "Yanvar",
+    "type": "noun"
+  },
+  {
+    "de": "Februar",
+    "uz": "Fevral",
+    "type": "noun"
+  },
+  {
+    "de": "März",
+    "uz": "Mart",
+    "type": "noun"
+  },
+  {
+    "de": "April",
+    "uz": "Aprel",
+    "type": "noun"
+  },
+  {
+    "de": "Mai",
+    "uz": "May",
+    "type": "noun"
+  },
+  {
+    "de": "Juni",
+    "uz": "Iyun",
+    "type": "noun"
+  },
+  {
+    "de": "Juli",
+    "uz": "Iyul",
+    "type": "noun"
+  },
+  {
+    "de": "August",
+    "uz": "Avgust",
+    "type": "noun"
+  },
+  {
+    "de": "September",
+    "uz": "Sentabr",
+    "type": "noun"
+  },
+  {
+    "de": "Oktober",
+    "uz": "Oktabr",
+    "type": "noun"
+  },
+  {
+    "de": "November",
+    "uz": "Noyabr",
+    "type": "noun"
+  },
+  {
+    "de": "Dezember",
+    "uz": "Dekabr",
+    "type": "noun"
+  },
+  {
+    "de": "der Tag",
+    "uz": "kun",
+    "type": "noun"
+  },
+  {
+    "de": "die Woche",
+    "uz": "hafta",
+    "type": "noun"
+  },
+  {
+    "de": "der Monat",
+    "uz": "oy",
+    "type": "noun"
+  },
+  {
+    "de": "das Jahr",
+    "uz": "yil",
+    "type": "noun"
+  },
+  {
+    "de": "die Stunde",
+    "uz": "soat",
+    "type": "noun"
+  },
+  {
+    "de": "die Minute",
+    "uz": "daqiqa",
+    "type": "noun"
+  },
+  {
+    "de": "die Sekunde",
+    "uz": "soniya",
+    "type": "noun"
+  },
+  {
+    "de": "heute",
+    "uz": "bugun",
+    "type": "adverb"
+  },
+  {
+    "de": "gestern",
+    "uz": "kecha",
+    "type": "adverb"
+  },
+  {
+    "de": "morgen",
+    "uz": "ertaga",
+    "type": "adverb"
+  },
+  {
+    "de": "jetzt",
+    "uz": "hozir",
+    "type": "adverb"
+  },
+  {
+    "de": "früher",
+    "uz": "ilgari / avval",
+    "type": "adverb"
+  },
+  {
+    "de": "später",
+    "uz": "keyinroq",
+    "type": "adverb"
+  },
+  {
+    "de": "immer",
+    "uz": "doimo",
+    "type": "adverb"
+  },
+  {
+    "de": "nie",
+    "uz": "hech qachon",
+    "type": "adverb"
+  },
+  {
+    "de": "manchmal",
+    "uz": "ba'zan",
+    "type": "adverb"
+  },
+  {
+    "de": "oft",
+    "uz": "tez-tez / ko'p",
+    "type": "adverb"
+  },
+  {
+    "de": "selten",
+    "uz": "kamdan-kam",
+    "type": "adverb"
+  },
+  {
+    "de": "der Arzt",
+    "uz": "shifokor",
+    "type": "noun"
+  },
+  {
+    "de": "der Lehrer",
+    "uz": "o'qituvchi",
+    "type": "noun"
+  },
+  {
+    "de": "der Ingenieur",
+    "uz": "muhandis",
+    "type": "noun"
+  },
+  {
+    "de": "der Architekt",
+    "uz": "me'mor",
+    "type": "noun"
+  },
+  {
+    "de": "der Anwalt",
+    "uz": "advokat",
+    "type": "noun"
+  },
+  {
+    "de": "der Polizist",
+    "uz": "politsiyachi",
+    "type": "noun"
+  },
+  {
+    "de": "der Feuerwehrmann",
+    "uz": "o't o'chiruvchi",
+    "type": "noun"
+  },
+  {
+    "de": "der Koch",
+    "uz": "oshpaz",
+    "type": "noun"
+  },
+  {
+    "de": "der Fahrer",
+    "uz": "haydovchi",
+    "type": "noun"
+  },
+  {
+    "de": "der Verkäufer",
+    "uz": "sotuvchi",
+    "type": "noun"
+  },
+  {
+    "de": "der Student",
+    "uz": "talaba",
+    "type": "noun"
+  },
+  {
+    "de": "der Schüler",
+    "uz": "o'quvchi",
+    "type": "noun"
+  },
+  {
+    "de": "der Direktor",
+    "uz": "direktor",
+    "type": "noun"
+  },
+  {
+    "de": "der Buchhalter",
+    "uz": "buxgalter",
+    "type": "noun"
+  },
+  {
+    "de": "der Journalist",
+    "uz": "jurnalist",
+    "type": "noun"
+  },
+  {
+    "de": "der Übersetzer",
+    "uz": "tarjimon",
+    "type": "noun"
+  },
+  {
+    "de": "der Programmierer",
+    "uz": "dasturchi",
+    "type": "noun"
+  },
+  {
+    "de": "die Schule",
+    "uz": "maktab",
+    "type": "noun"
+  },
+  {
+    "de": "die Universität",
+    "uz": "universitet",
+    "type": "noun"
+  },
+  {
+    "de": "das Krankenhaus",
+    "uz": "kasalxona",
+    "type": "noun"
+  },
+  {
+    "de": "die Apotheke",
+    "uz": "dorixona",
+    "type": "noun"
+  },
+  {
+    "de": "der Markt",
+    "uz": "bozor",
+    "type": "noun"
+  },
+  {
+    "de": "der Supermarkt",
+    "uz": "supermarket",
+    "type": "noun"
+  },
+  {
+    "de": "das Restaurant",
+    "uz": "restoran",
+    "type": "noun"
+  },
+  {
+    "de": "das Hotel",
+    "uz": "mehmonxona",
+    "type": "noun"
+  },
+  {
+    "de": "der Bahnhof",
+    "uz": "temir yo'l stantsiyasi",
+    "type": "noun"
+  },
+  {
+    "de": "der Flughafen",
+    "uz": "aeroport",
+    "type": "noun"
+  },
+  {
+    "de": "die Bank",
+    "uz": "bank",
+    "type": "noun"
+  },
+  {
+    "de": "das Amt",
+    "uz": "idora",
+    "type": "noun"
+  },
+  {
+    "de": "die Bibliothek",
+    "uz": "kutubxona",
+    "type": "noun"
+  },
+  {
+    "de": "das Kino",
+    "uz": "kino",
+    "type": "noun"
+  },
+  {
+    "de": "das Theater",
+    "uz": "teatr",
+    "type": "noun"
+  },
+  {
+    "de": "der Park",
+    "uz": "bog'",
+    "type": "noun"
+  },
+  {
+    "de": "die Straße",
+    "uz": "ko'cha",
+    "type": "noun"
+  },
+  {
+    "de": "die Brücke",
+    "uz": "ko'prik",
+    "type": "noun"
+  },
+  {
+    "de": "die Kirche",
+    "uz": "cherkov",
+    "type": "noun"
+  },
+  {
+    "de": "die Moschee",
+    "uz": "masjid",
+    "type": "noun"
+  },
+  {
+    "de": "das Auto",
+    "uz": "mashina / avtomobil",
+    "type": "noun"
+  },
+  {
+    "de": "der Bus",
+    "uz": "avtobus",
+    "type": "noun"
+  },
+  {
+    "de": "der Zug",
+    "uz": "poyezd",
+    "type": "noun"
+  },
+  {
+    "de": "das Flugzeug",
+    "uz": "samolyot",
+    "type": "noun"
+  },
+  {
+    "de": "das Fahrrad",
+    "uz": "velosiped",
+    "type": "noun"
+  },
+  {
+    "de": "das Motorrad",
+    "uz": "mototsikl",
+    "type": "noun"
+  },
+  {
+    "de": "das Schiff",
+    "uz": "kema",
+    "type": "noun"
+  },
+  {
+    "de": "die Straßenbahn",
+    "uz": "tramvay",
+    "type": "noun"
+  },
+  {
+    "de": "die U-Bahn",
+    "uz": "metro",
+    "type": "noun"
+  },
+  {
+    "de": "das Taxi",
+    "uz": "taksi",
+    "type": "noun"
+  },
+  {
+    "de": "der Frühling",
+    "uz": "bahor",
+    "type": "noun"
+  },
+  {
+    "de": "der Sommer",
+    "uz": "yoz",
+    "type": "noun"
+  },
+  {
+    "de": "der Herbst",
+    "uz": "kuz",
+    "type": "noun"
+  },
+  {
+    "de": "der Winter",
+    "uz": "qish",
+    "type": "noun"
+  },
+  {
+    "de": "die Sonne",
+    "uz": "quyosh",
+    "type": "noun"
+  },
+  {
+    "de": "der Mond",
+    "uz": "oy",
+    "type": "noun"
+  },
+  {
+    "de": "der Stern",
+    "uz": "yulduz",
+    "type": "noun"
+  },
+  {
+    "de": "der Himmel",
+    "uz": "osmon",
+    "type": "noun"
+  },
+  {
+    "de": "die Wolke",
+    "uz": "bulut",
+    "type": "noun"
+  },
+  {
+    "de": "der Regen",
+    "uz": "yomg'ir",
+    "type": "noun"
+  },
+  {
+    "de": "der Schnee",
+    "uz": "qor",
+    "type": "noun"
+  },
+  {
+    "de": "der Wind",
+    "uz": "shamol",
+    "type": "noun"
+  },
+  {
+    "de": "der Sturm",
+    "uz": "bo'ron",
+    "type": "noun"
+  },
+  {
+    "de": "das Gewitter",
+    "uz": "momaqaldiroq",
+    "type": "noun"
+  },
+  {
+    "de": "der Blitz",
+    "uz": "chaqmoq",
+    "type": "noun"
+  },
+  {
+    "de": "der Nebel",
+    "uz": "tuman",
+    "type": "noun"
+  },
+  {
+    "de": "das Eis",
+    "uz": "muz",
+    "type": "noun"
+  },
+  {
+    "de": "der Berg",
+    "uz": "tog'",
+    "type": "noun"
+  },
+  {
+    "de": "der Fluss",
+    "uz": "daryo",
+    "type": "noun"
+  },
+  {
+    "de": "der See",
+    "uz": "ko'l",
+    "type": "noun"
+  },
+  {
+    "de": "das Meer",
+    "uz": "dengiz",
+    "type": "noun"
+  },
+  {
+    "de": "der Wald",
+    "uz": "o'rmon",
+    "type": "noun"
+  },
+  {
+    "de": "das Feld",
+    "uz": "dala",
+    "type": "noun"
+  },
+  {
+    "de": "die Wüste",
+    "uz": "cho'l",
+    "type": "noun"
+  },
+  {
+    "de": "die Erde",
+    "uz": "yer / tuproq",
+    "type": "noun"
+  },
+  {
+    "de": "der Hund",
+    "uz": "it",
+    "type": "noun"
+  },
+  {
+    "de": "die Katze",
+    "uz": "mushuk",
+    "type": "noun"
+  },
+  {
+    "de": "der Vogel",
+    "uz": "qush",
+    "type": "noun"
+  },
+  {
+    "de": "das Pferd",
+    "uz": "ot",
+    "type": "noun"
+  },
+  {
+    "de": "die Kuh",
+    "uz": "sigir",
+    "type": "noun"
+  },
+  {
+    "de": "das Schaf",
+    "uz": "qo'y",
+    "type": "noun"
+  },
+  {
+    "de": "die Ziege",
+    "uz": "echki",
+    "type": "noun"
+  },
+  {
+    "de": "das Huhn",
+    "uz": "tovuq",
+    "type": "noun"
+  },
+  {
+    "de": "der Esel",
+    "uz": "eshak",
+    "type": "noun"
+  },
+  {
+    "de": "der Löwe",
+    "uz": "sher",
+    "type": "noun"
+  },
+  {
+    "de": "der Tiger",
+    "uz": "yo'lbars",
+    "type": "noun"
+  },
+  {
+    "de": "der Bär",
+    "uz": "ayiq",
+    "type": "noun"
+  },
+  {
+    "de": "der Wolf",
+    "uz": "bo'ri",
+    "type": "noun"
+  },
+  {
+    "de": "der Fuchs",
+    "uz": "tulki",
+    "type": "noun"
+  },
+  {
+    "de": "der Hase",
+    "uz": "quyon",
+    "type": "noun"
+  },
+  {
+    "de": "die Schlange",
+    "uz": "ilon",
+    "type": "noun"
+  },
+  {
+    "de": "der Fisch",
+    "uz": "baliq",
+    "type": "noun"
+  },
+  {
+    "de": "der Elefant",
+    "uz": "fil",
+    "type": "noun"
+  },
+  {
+    "de": "der Affe",
+    "uz": "maymun",
+    "type": "noun"
+  },
+  {
+    "de": "die Gesundheit",
+    "uz": "sog'liq",
+    "type": "noun"
+  },
+  {
+    "de": "die Krankheit",
+    "uz": "kasallik",
+    "type": "noun"
+  },
+  {
+    "de": "der Schmerz",
+    "uz": "og'riq",
+    "type": "noun"
+  },
+  {
+    "de": "das Fieber",
+    "uz": "isitma",
+    "type": "noun"
+  },
+  {
+    "de": "der Husten",
+    "uz": "yo'tal",
+    "type": "noun"
+  },
+  {
+    "de": "der Schnupfen",
+    "uz": "shamollash / tumov",
+    "type": "noun"
+  },
+  {
+    "de": "die Erkältung",
+    "uz": "shamollash",
+    "type": "noun"
+  },
+  {
+    "de": "das Medikament",
+    "uz": "dori",
+    "type": "noun"
+  },
+  {
+    "de": "die Tablette",
+    "uz": "tabletka",
+    "type": "noun"
+  },
+  {
+    "de": "die Operation",
+    "uz": "operatsiya",
+    "type": "noun"
+  },
+  {
+    "de": "der Verband",
+    "uz": "bog'lam",
+    "type": "noun"
+  },
+  {
+    "de": "der Blutdruck",
+    "uz": "qon bosimi",
+    "type": "noun"
+  },
+  {
+    "de": "die Allergie",
+    "uz": "allergiya",
+    "type": "noun"
+  },
+  {
+    "de": "der Notfall",
+    "uz": "favqulodda holat",
+    "type": "noun"
+  },
+  {
+    "de": "der Krankenwagen",
+    "uz": "tez yordam mashinasi",
+    "type": "noun"
+  },
+  {
+    "de": "die Schule",
+    "uz": "maktab",
+    "type": "noun"
+  },
+  {
+    "de": "das Buch",
+    "uz": "kitob",
+    "type": "noun"
+  },
+  {
+    "de": "das Heft",
+    "uz": "daftar",
+    "type": "noun"
+  },
+  {
+    "de": "der Stift",
+    "uz": "qalam",
+    "type": "noun"
+  },
+  {
+    "de": "der Bleistift",
+    "uz": "qo'rg'oshin qalam",
+    "type": "noun"
+  },
+  {
+    "de": "das Lineal",
+    "uz": "chizg'ich",
+    "type": "noun"
+  },
+  {
+    "de": "der Radiergummi",
+    "uz": "o'chirg'ich",
+    "type": "noun"
+  },
+  {
+    "de": "die Tasche",
+    "uz": "sumka / cho'ntak",
+    "type": "noun"
+  },
+  {
+    "de": "die Tafel",
+    "uz": "doska",
+    "type": "noun"
+  },
+  {
+    "de": "die Hausaufgabe",
+    "uz": "uy vazifasi",
+    "type": "noun"
+  },
+  {
+    "de": "die Prüfung",
+    "uz": "imtihon",
+    "type": "noun"
+  },
+  {
+    "de": "die Note",
+    "uz": "baho",
+    "type": "noun"
+  },
+  {
+    "de": "das Fach",
+    "uz": "fan / predmet",
+    "type": "noun"
+  },
+  {
+    "de": "die Mathematik",
+    "uz": "matematika",
+    "type": "noun"
+  },
+  {
+    "de": "die Physik",
+    "uz": "fizika",
+    "type": "noun"
+  },
+  {
+    "de": "die Chemie",
+    "uz": "kimyo",
+    "type": "noun"
+  },
+  {
+    "de": "die Geschichte",
+    "uz": "tarix",
+    "type": "noun"
+  },
+  {
+    "de": "die Geografie",
+    "uz": "geografiya",
+    "type": "noun"
+  },
+  {
+    "de": "die Biologie",
+    "uz": "biologiya",
+    "type": "noun"
+  },
+  {
+    "de": "die Sprache",
+    "uz": "til",
+    "type": "noun"
+  },
+  {
+    "de": "die Literatur",
+    "uz": "adabiyot",
+    "type": "noun"
+  },
+  {
+    "de": "Guten Morgen",
+    "uz": "Xayrli tong",
+    "type": "phrase"
+  },
+  {
+    "de": "Guten Tag",
+    "uz": "Xayrli kun",
+    "type": "phrase"
+  },
+  {
+    "de": "Guten Abend",
+    "uz": "Xayrli kech",
+    "type": "phrase"
+  },
+  {
+    "de": "Gute Nacht",
+    "uz": "Yaxshi tunlar",
+    "type": "phrase"
+  },
+  {
+    "de": "Auf Wiedersehen",
+    "uz": "Xayr / Ko'rishguncha",
+    "type": "phrase"
+  },
+  {
+    "de": "Tschüss",
+    "uz": "Xayr (norasmiy)",
+    "type": "phrase"
+  },
+  {
+    "de": "Bitte",
+    "uz": "Iltimos / Marhamat",
+    "type": "phrase"
+  },
+  {
+    "de": "Danke",
+    "uz": "Rahmat",
+    "type": "phrase"
+  },
+  {
+    "de": "Danke schön",
+    "uz": "Katta rahmat",
+    "type": "phrase"
+  },
+  {
+    "de": "Bitte sehr",
+    "uz": "Iltimos / Marhamat",
+    "type": "phrase"
+  },
+  {
+    "de": "Entschuldigung",
+    "uz": "Kechirasiz / Uzr",
+    "type": "phrase"
+  },
+  {
+    "de": "Es tut mir leid",
+    "uz": "Kechirasiz / Afsusdaman",
+    "type": "phrase"
+  },
+  {
+    "de": "Ja",
+    "uz": "Ha",
+    "type": "phrase"
+  },
+  {
+    "de": "Nein",
+    "uz": "Yo'q",
+    "type": "phrase"
+  },
+  {
+    "de": "Vielleicht",
+    "uz": "Balki / Ehtimol",
+    "type": "phrase"
+  },
+  {
+    "de": "Wie geht es Ihnen?",
+    "uz": "Qandaysiz? (rasmiy)",
+    "type": "phrase"
+  },
+  {
+    "de": "Wie geht's?",
+    "uz": "Qandaysan? (norasmiy)",
+    "type": "phrase"
+  },
+  {
+    "de": "Mir geht es gut",
+    "uz": "Men yaxshiman",
+    "type": "phrase"
+  },
+  {
+    "de": "Wie heißen Sie?",
+    "uz": "Ismingiz nima? (rasmiy)",
+    "type": "phrase"
+  },
+  {
+    "de": "Wie heißt du?",
+    "uz": "Isming nima?",
+    "type": "phrase"
+  },
+  {
+    "de": "Ich heiße...",
+    "uz": "Mening ismim...",
+    "type": "phrase"
+  },
+  {
+    "de": "Woher kommen Sie?",
+    "uz": "Qayerdansiz?",
+    "type": "phrase"
+  },
+  {
+    "de": "Ich komme aus Usbekistan",
+    "uz": "Men O'zbekistondan kelganman",
+    "type": "phrase"
+  },
+  {
+    "de": "Sprechen Sie Deutsch?",
+    "uz": "Nemis tilini bilasizmi?",
+    "type": "phrase"
+  },
+  {
+    "de": "Ich verstehe nicht",
+    "uz": "Men tushunmadim",
+    "type": "phrase"
+  },
+  {
+    "de": "Können Sie das wiederholen?",
+    "uz": "Qaytarib ayting, iltimos",
+    "type": "phrase"
+  },
+  {
+    "de": "Wie viel kostet das?",
+    "uz": "Bu qancha turadi?",
+    "type": "phrase"
+  },
+  {
+    "de": "Wo ist die Toilette?",
+    "uz": "Hojatxona qayerda?",
+    "type": "phrase"
+  },
+  {
+    "de": "Hilfe!",
+    "uz": "Yordam bering!",
+    "type": "phrase"
+  },
+  {
+    "de": "Ich brauche einen Arzt",
+    "uz": "Menga shifokor kerak",
+    "type": "phrase"
+  },
+  {
+    "de": "Herzlichen Glückwunsch!",
+    "uz": "Tabriklayman!",
+    "type": "phrase"
+  },
+  {
+    "de": "Alles Gute!",
+    "uz": "Hammasi yaxshi bo'lsin!",
+    "type": "phrase"
+  },
+  {
+    "de": "Gute Besserung!",
+    "uz": "Tezroq tuzalib keting!",
+    "type": "phrase"
+  },
+  {
+    "de": "Viel Erfolg!",
+    "uz": "Omad tilayman!",
+    "type": "phrase"
+  },
+  {
+    "de": "Viel Spaß!",
+    "uz": "Yaxshi o'ynagin / Ko'ngil oching!",
+    "type": "phrase"
+  },
+  {
+    "de": "Guten Appetit!",
+    "uz": "Yoqimli ishtaha!",
+    "type": "phrase"
+  },
+  {
+    "de": "Prost!",
+    "uz": "Sog'lig'ingizga!",
+    "type": "phrase"
+  },
+  {
+    "de": "Den Nagel auf den Kopf treffen",
+    "uz": "To'g'ri maqsadga urmoq (mix boshiga urmoq)",
+    "type": "idiom"
+  },
+  {
+    "de": "Das ist nicht mein Bier",
+    "uz": "Bu mening ishim emas",
+    "type": "idiom"
+  },
+  {
+    "de": "Ich drücke dir die Daumen",
+    "uz": "Seni qo'llab-quvvatlayman / omad tilayman",
+    "type": "idiom"
+  },
+  {
+    "de": "Das geht mir auf die Nerven",
+    "uz": "Bu mening asabimga tegmoqda",
+    "type": "idiom"
+  },
+  {
+    "de": "Alles hat ein Ende",
+    "uz": "Hamma narsa tugaydi",
+    "type": "idiom"
+  },
+  {
+    "de": "Zeit ist Geld",
+    "uz": "Vaqt — pul",
+    "type": "idiom"
+  },
+  {
+    "de": "Morgenstund hat Gold im Mund",
+    "uz": "Erta turgan oltin topar",
+    "type": "idiom"
+  },
+  {
+    "de": "Übung macht den Meister",
+    "uz": "Mashq ustani shakllantiradi",
+    "type": "idiom"
+  },
+  {
+    "de": "Ende gut, alles gut",
+    "uz": "Oxiri yaxshi bo'lsa hammasi yaxshi",
+    "type": "idiom"
+  },
+  {
+    "de": "Wie du mir, so ich dir",
+    "uz": "Ko'zga ko'z, tishga tish",
+    "type": "idiom"
+  },
+  {
+    "de": "Hals und Beinbruch",
+    "uz": "Omad tilayman (so'zma-so'z: bo'yin va oyoq sinishi)",
+    "type": "idiom"
+  },
+  {
+    "de": "Das ist Jacke wie Hose",
+    "uz": "Ikkalasi ham bir xil / Farqi yo'q",
+    "type": "idiom"
+  },
+  {
+    "de": "Lügen haben kurze Beine",
+    "uz": "Yolg'onning oyog'i qisqa",
+    "type": "idiom"
+  },
+  {
+    "de": "Reden ist Silber, Schweigen ist Gold",
+    "uz": "Gapirish kumush, sukut oltin",
+    "type": "idiom"
+  },
+  {
+    "de": "In der Not frisst der Teufel Fliegen",
+    "uz": "Qiyin paytda tanlov bo'lmaydi",
+    "type": "idiom"
+  },
+  {
+    "de": "Wer zuletzt lacht, lacht am besten",
+    "uz": "Oxirida kulgan yaxshi kuladi",
+    "type": "idiom"
+  },
+  {
+    "de": "Aller Anfang ist schwer",
+    "uz": "Har qanday ishning boshi qiyin",
+    "type": "idiom"
+  },
+  {
+    "de": "Man soll den Tag nicht vor dem Abend loben",
+    "uz": "Kuni bitmay maqtama",
+    "type": "idiom"
+  },
+  {
+    "de": "Andere Länder, andere Sitten",
+    "uz": "Boshqa mamlakat, boshqa odat",
+    "type": "idiom"
+  },
+  {
+    "de": "Aus den Augen, aus dem Sinn",
+    "uz": "Ko'zdan uzoq — ko'ngildan uzoq",
+    "type": "idiom"
+  },
+  {
+    "de": "Die Katze aus dem Sack lassen",
+    "uz": "Sirni fosh qilmoq",
+    "type": "idiom"
+  },
+  {
+    "de": "Schwein haben",
+    "uz": "Omad qilmoq (so'zma-so'z: cho'chqa egasi bo'lmoq)",
+    "type": "idiom"
+  },
+  {
+    "de": "Tomaten auf den Augen haben",
+    "uz": "Ko'zi ojiz bo'lmoq / Ko'rinib turgan narsani ko'rmaslik",
+    "type": "idiom"
+  },
+  {
+    "de": "Einen Frosch im Hals haben",
+    "uz": "Ovozi bo'g'ilmoq / Xириллаб gapirmoq",
+    "type": "idiom"
+  },
+  {
+    "de": "Das ist mir Wurst",
+    "uz": "Menga baribir / Farqi yo'q",
+    "type": "idiom"
+  },
+  {
+    "de": "Ich bin auf den Hund gekommen",
+    "uz": "Men xarobaga aylandim / Ahvolim yomonlashdi",
+    "type": "idiom"
+  },
+  {
+    "de": "Einen Bärenhunger haben",
+    "uz": "Juda qattiq och bo'lmoq (ayiq ishtahasi)",
+    "type": "idiom"
+  },
+  {
+    "de": "Das ist ein zweischneidiges Schwert",
+    "uz": "Bu ikki tomonlama qurol / Xavfli vaziyat",
+    "type": "idiom"
+  },
+  {
+    "de": "Eulen nach Athen tragen",
+    "uz": "Daryo suvini daryoga olib bormoq / Keraksiz narsa qilmoq",
+    "type": "idiom"
+  },
+  {
+    "de": "Nicht alle Tassen im Schrank haben",
+    "uz": "Miyasi joyida emas / Kallasi ishlamaydi",
+    "type": "idiom"
+  },
+  {
+    "de": "das Geld",
+    "uz": "pul",
+    "type": "noun"
+  },
+  {
+    "de": "die Rechnung",
+    "uz": "hisob / schyot",
+    "type": "noun"
+  },
+  {
+    "de": "der Preis",
+    "uz": "narx / baho",
+    "type": "noun"
+  },
+  {
+    "de": "der Rabatt",
+    "uz": "chegirma",
+    "type": "noun"
+  },
+  {
+    "de": "die Steuer",
+    "uz": "soliq",
+    "type": "noun"
+  },
+  {
+    "de": "das Gehalt",
+    "uz": "maosh",
+    "type": "noun"
+  },
+  {
+    "de": "der Lohn",
+    "uz": "ish haqi",
+    "type": "noun"
+  },
+  {
+    "de": "die Kreditkarte",
+    "uz": "kredit karta",
+    "type": "noun"
+  },
+  {
+    "de": "das Bargeld",
+    "uz": "naqd pul",
+    "type": "noun"
+  },
+  {
+    "de": "der Kredit",
+    "uz": "kredit / qarz",
+    "type": "noun"
+  },
+  {
+    "de": "das Konto",
+    "uz": "hisob raqam",
+    "type": "noun"
+  },
+  {
+    "de": "die Überweisung",
+    "uz": "pul o'tkazma",
+    "type": "noun"
+  },
+  {
+    "de": "das Hemd",
+    "uz": "ko'ylak",
+    "type": "noun"
+  },
+  {
+    "de": "die Hose",
+    "uz": "shim",
+    "type": "noun"
+  },
+  {
+    "de": "das Kleid",
+    "uz": "ko'ylak (ayollar)",
+    "type": "noun"
+  },
+  {
+    "de": "der Rock",
+    "uz": "yubka",
+    "type": "noun"
+  },
+  {
+    "de": "die Jacke",
+    "uz": "kurtka / jilet",
+    "type": "noun"
+  },
+  {
+    "de": "der Mantel",
+    "uz": "palto",
+    "type": "noun"
+  },
+  {
+    "de": "der Schuh",
+    "uz": "tufli / poyabzal",
+    "type": "noun"
+  },
+  {
+    "de": "die Socke",
+    "uz": "paypoq",
+    "type": "noun"
+  },
+  {
+    "de": "der Hut",
+    "uz": "shlyapa",
+    "type": "noun"
+  },
+  {
+    "de": "die Mütze",
+    "uz": "qalpoq / do'ppi",
+    "type": "noun"
+  },
+  {
+    "de": "der Schal",
+    "uz": "sharf",
+    "type": "noun"
+  },
+  {
+    "de": "die Handschuhe",
+    "uz": "qo'lqop",
+    "type": "noun"
+  },
+  {
+    "de": "der Gürtel",
+    "uz": "kamar",
+    "type": "noun"
+  },
+  {
+    "de": "die Krawatte",
+    "uz": "galstuk",
+    "type": "noun"
+  },
+  {
+    "de": "der Pullover",
+    "uz": "sviter",
+    "type": "noun"
+  },
+  {
+    "de": "ich",
+    "uz": "men",
+    "type": "pronoun"
+  },
+  {
+    "de": "du",
+    "uz": "sen",
+    "type": "pronoun"
+  },
+  {
+    "de": "er",
+    "uz": "u (erkak)",
+    "type": "pronoun"
+  },
+  {
+    "de": "sie",
+    "uz": "u (ayol) / ular",
+    "type": "pronoun"
+  },
+  {
+    "de": "es",
+    "uz": "u (narsa)",
+    "type": "pronoun"
+  },
+  {
+    "de": "wir",
+    "uz": "biz",
+    "type": "pronoun"
+  },
+  {
+    "de": "ihr",
+    "uz": "sizlar / senlar",
+    "type": "pronoun"
+  },
+  {
+    "de": "Sie",
+    "uz": "Siz (rasmiy)",
+    "type": "pronoun"
+  },
+  {
+    "de": "mein",
+    "uz": "mening",
+    "type": "pronoun"
+  },
+  {
+    "de": "dein",
+    "uz": "sening",
+    "type": "pronoun"
+  },
+  {
+    "de": "sein",
+    "uz": "uning (erkak)",
+    "type": "pronoun"
+  },
+  {
+    "de": "ihr",
+    "uz": "uning (ayol)",
+    "type": "pronoun"
+  },
+  {
+    "de": "unser",
+    "uz": "bizning",
+    "type": "pronoun"
+  },
+  {
+    "de": "und",
+    "uz": "va",
+    "type": "conjunction"
+  },
+  {
+    "de": "oder",
+    "uz": "yoki",
+    "type": "conjunction"
+  },
+  {
+    "de": "aber",
+    "uz": "lekin / ammo",
+    "type": "conjunction"
+  },
+  {
+    "de": "weil",
+    "uz": "chunki",
+    "type": "conjunction"
+  },
+  {
+    "de": "wenn",
+    "uz": "agar / qachon",
+    "type": "conjunction"
+  },
+  {
+    "de": "dass",
+    "uz": "deb / shunki",
+    "type": "conjunction"
+  },
+  {
+    "de": "obwohl",
+    "uz": "garchi ... bo'lsa ham",
+    "type": "conjunction"
+  },
+  {
+    "de": "damit",
+    "uz": "shuki / maqsadida",
+    "type": "conjunction"
+  },
+  {
+    "de": "also",
+    "uz": "demak / shuning uchun",
+    "type": "conjunction"
+  },
+  {
+    "de": "trotzdem",
+    "uz": "shunday bo'lsa ham",
+    "type": "conjunction"
+  },
+  {
+    "de": "in",
+    "uz": "ichida / da",
+    "type": "preposition"
+  },
+  {
+    "de": "auf",
+    "uz": "ustida",
+    "type": "preposition"
+  },
+  {
+    "de": "unter",
+    "uz": "ostida",
+    "type": "preposition"
+  },
+  {
+    "de": "über",
+    "uz": "ustida / haqida",
+    "type": "preposition"
+  },
+  {
+    "de": "vor",
+    "uz": "oldida / avval",
+    "type": "preposition"
+  },
+  {
+    "de": "hinter",
+    "uz": "orqasida",
+    "type": "preposition"
+  },
+  {
+    "de": "neben",
+    "uz": "yonida",
+    "type": "preposition"
+  },
+  {
+    "de": "zwischen",
+    "uz": "orasida",
+    "type": "preposition"
+  },
+  {
+    "de": "mit",
+    "uz": "bilan",
+    "type": "preposition"
+  },
+  {
+    "de": "ohne",
+    "uz": "siz / holda",
+    "type": "preposition"
+  },
+  {
+    "de": "für",
+    "uz": "uchun",
+    "type": "preposition"
+  },
+  {
+    "de": "gegen",
+    "uz": "qarshi",
+    "type": "preposition"
+  },
+  {
+    "de": "durch",
+    "uz": "orqali / ichidan",
+    "type": "preposition"
+  },
+  {
+    "de": "nach",
+    "uz": "keyin / ga tomon",
+    "type": "preposition"
+  },
+  {
+    "de": "von",
+    "uz": "dan / haqida",
+    "type": "preposition"
+  },
+  {
+    "de": "zu",
+    "uz": "ga / tomon",
+    "type": "preposition"
+  },
+  {
+    "de": "bei",
+    "uz": "yonida / paytida",
+    "type": "preposition"
+  },
+  {
+    "de": "seit",
+    "uz": "dan beri",
+    "type": "preposition"
+  },
+  {
+    "de": "bis",
+    "uz": "gacha",
+    "type": "preposition"
+  },
+  {
+    "de": "ab",
+    "uz": "dan boshlab",
+    "type": "preposition"
+  },
+  {
+    "de": "hier",
+    "uz": "bu yerda",
+    "type": "adverb"
+  },
+  {
+    "de": "dort",
+    "uz": "u yerda",
+    "type": "adverb"
+  },
+  {
+    "de": "oben",
+    "uz": "yuqorida",
+    "type": "adverb"
+  },
+  {
+    "de": "unten",
+    "uz": "quyida",
+    "type": "adverb"
+  },
+  {
+    "de": "links",
+    "uz": "chapda",
+    "type": "adverb"
+  },
+  {
+    "de": "rechts",
+    "uz": "o'ngda",
+    "type": "adverb"
+  },
+  {
+    "de": "geradeaus",
+    "uz": "to'g'ri",
+    "type": "adverb"
+  },
+  {
+    "de": "weit",
+    "uz": "uzoq",
+    "type": "adverb"
+  },
+  {
+    "de": "nah",
+    "uz": "yaqin",
+    "type": "adverb"
+  },
+  {
+    "de": "überall",
+    "uz": "hamma joyda",
+    "type": "adverb"
+  },
+  {
+    "de": "nirgendwo",
+    "uz": "hech qaerda",
+    "type": "adverb"
+  },
+  {
+    "de": "irgendwo",
+    "uz": "biror joyda",
+    "type": "adverb"
+  },
+  {
+    "de": "rot",
+    "uz": "qizil",
+    "type": "adjective"
+  },
+  {
+    "de": "blau",
+    "uz": "ko'k",
+    "type": "adjective"
+  },
+  {
+    "de": "grün",
+    "uz": "yashil",
+    "type": "adjective"
+  },
+  {
+    "de": "gelb",
+    "uz": "sariq",
+    "type": "adjective"
+  },
+  {
+    "de": "orange",
+    "uz": "to'q sariq / apelsin rangi",
+    "type": "adjective"
+  },
+  {
+    "de": "lila",
+    "uz": "binafsha",
+    "type": "adjective"
+  },
+  {
+    "de": "rosa",
+    "uz": "pushti",
+    "type": "adjective"
+  },
+  {
+    "de": "weiß",
+    "uz": "oq",
+    "type": "adjective"
+  },
+  {
+    "de": "schwarz",
+    "uz": "qora",
+    "type": "adjective"
+  },
+  {
+    "de": "grau",
+    "uz": "kulrang",
+    "type": "adjective"
+  },
+  {
+    "de": "braun",
+    "uz": "jigarrang",
+    "type": "adjective"
+  },
+  {
+    "de": "gold",
+    "uz": "oltin rangi",
+    "type": "adjective"
+  },
+  {
+    "de": "silber",
+    "uz": "kumush rangi",
+    "type": "adjective"
+  }
+];

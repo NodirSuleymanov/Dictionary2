@@ -20,17 +20,18 @@ const TYPE_ICONS = {
 };
 
 // ─── Lug'at bazasini yuklash ─────────────────────────────
-fetch('data/dictionary.json')
-  .then(r => r.json())
-  .then(data => {
-    allWords = data.words;
+// file:// protokolida fetch ishlamasligi uchun data.js dan yuklaymiz
+function loadDictionary() {
+  if (typeof WORDS_DATA !== 'undefined') {
+    allWords = WORDS_DATA;
     renderWords(allWords);
     checkApi();
-  })
-  .catch(() => {
+  } else {
     document.getElementById('resultsList').innerHTML =
       '<div class="no-result"><div class="no-result-icon">⚠️</div><p>Lug\'at bazasi yuklanmadi.</p></div>';
-  });
+  }
+}
+loadDictionary();
 
 // ─── API tekshirish ──────────────────────────────────────
 function checkApi() {
