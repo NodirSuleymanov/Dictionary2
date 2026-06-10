@@ -318,3 +318,71 @@ body {
   .card-uz { font-size: 0.9rem; }
   .stats-bar { gap: 10px; font-size: 0.8rem; }
 }
+
+
+/* ─── O'qilish (Transkriptsiya) ──────────────────────────── */
+.card-pron {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0 4px;
+}
+.pron-icon { font-size: 0.9rem; }
+.pron-text {
+  font-size: 0.85rem;
+  color: #67e8f9;
+  font-family: 'Courier New', monospace;
+  background: rgba(103, 232, 249, 0.08);
+  padding: 2px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(103, 232, 249, 0.2);
+  letter-spacing: 0.5px;
+}
+
+/* ─── Misol gap ──────────────────────────────────────────── */
+.card-example {
+  margin-top: 10px;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid #3b82f6;
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+}
+.example-label {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.example-de {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+.example-de em {
+  font-style: italic;
+  color: #e2e8f0;
+}
+.example-uz {
+  font-size: 0.88rem;
+  color: #94a3b8;
+}
+
+/* ─── Qidiruv ta'kidlash ─────────────────────────────────── */
+mark {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #1a1a2e;
+  border-radius: 3px;
+  padding: 0 2px;
+  font-weight: 700;
+}
+
+/* ─── Ko'proq natija ─────────────────────────────────────── */
+.more-hint {
+  text-align: center;
+  padding: 14px;
+  color: #475569;
+  font-size: 0.85rem;
+}
